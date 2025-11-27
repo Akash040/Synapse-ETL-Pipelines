@@ -1,0 +1,27 @@
+
+---
+
+# 🧊 2. MEDALLION ARCHITECTURE (ADLS + SYNAPSE)
+
+### **Bronze Layer (Raw Landing Zone)**  
+- Stores incoming API/DB/CSV data **as-is**  
+- No transformations  
+- Audit columns added  
+
+### **Silver Layer (Cleaned + Standardized)**  
+- Data type corrections  
+- Null handling  
+- Deduplication  
+- JSON flattening  
+- Lookup enrichment  
+- Business rule application  
+
+### **Gold Layer (Curated Data Warehouse)**  
+- Fact tables  
+- Dimension tables  
+- Aggregations  
+- KPI views  
+- BI-ready models  
+
+
+
