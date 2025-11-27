@@ -1,0 +1,75 @@
+### ✔ **Full Load Pipeline**
+Used for:
+- Initial migration  
+- Reference tables  
+- Low-volume datasets  
+
+### ✔ **Incremental Load Pipeline**
+Built using:
+- `LAST_MODIFIED_DATE` column  
+- Watermark tracking table  
+- Upsert logic (merge into Silver/Gold)  
+- Late arriving data handling  
+
+### ✔ **Metadata-Driven Pipeline**
+Loads **multiple tables using a single pipeline** by reading:
+- Source table  
+- Target path  
+- Load type  
+- Watermark column  
+- File format  
+
+From a config file:  
+`06-config-metadata/ingestion_metadata.csv
+
+
+
+SILVER LAYER TRANSFORMATIONS
+
+### Examples:
+- Standardize country codes  
+- Fix data quality issues  
+- Normalize currency (USD/AED/EUR)  
+- Clean numeric values (e.g., `8.` → `8`)  
+- Remove invalid characters  
+- Flatten nested JSON (API ingestion)  
+- Standardize timestamps  
+- Remove duplicates  
+- Add surrogate keys 
+
+
+
+GOLD LAYER MODELING
+
+### Fact Tables:
+- `fact_api_transactions`  
+- `fact_sales`  
+- `fact_orders`  
+
+### Dimension Tables:
+- `dim_customer`  
+- `dim_date`  
+- `dim_country`  
+- `dim_product`  
+
+### Features:
+- SCD Type-2 handling  
+- Surrogate keys  
+- Business keys  
+- Aggregated KPIs  
+
+DATA QUALITY FRAMEWORK
+
+Included in:  
+`04-spark-notebooks/06_data_quality_framework.ipynb`
+
+### Checks:
+- Null check  
+- Duplicate check  
+- Numeric validation  
+- Date format validation  
+- Referential integrity check  
+- Schema drift validation  
+
+Output stored in:
+/adls/dq_logs/
