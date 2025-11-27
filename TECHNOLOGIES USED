@@ -1,0 +1,12 @@
+| Layer | Services |
+|-------|----------|
+| Data Ingestion | ADF/Synapse Pipelines, REST, SFTP, Linked Services |
+| Storage | ADLS Gen2 (Delta/Parquet/CSV) |
+| Compute | Synapse Spark (PySpark) |
+| ETL/ELT | Notebooks + SQL |
+| Modeling | Azure SQL DB + SQL DW |
+| Monitoring | Log tables + Email alerts |
+| Framework | Medallion Architecture |
+| Incremental Loads | Watermark tracking |
+
+---
