@@ -1,0 +1,22 @@
+RDBMS (Oracle / SQL Server)
+            ↓
+        REST APIs
+            ↓
+  CSV/Excel from SFTP / Cloud
+            ↓
+┌───────────────────────────────────┐
+│ Azure Data Factory │
+│ (Pipelines + Copy Activities) │
+└───────────────────────────────────┘
+↓
+ADLS Gen2 (Raw / Bronze)
+↓
+Synapse Spark (Cleaning + Enrichment)
+↓
+Silver Layer (Standardized)
+↓
+Gold Layer (Fact & Dimensions)
+↓
+Azure SQL Data Warehouse (DWH)
+↓
+Power BI / Apps / APIs
